@@ -5,6 +5,16 @@ const taskListForm = document.querySelector("ul");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  if (taskInputForm.value.trim().length < 3) {
+    alert("Task must be at least 3 characters long");
+    return;
+  }
+
+  if (taskInputForm.value[0].toUpperCase() !== taskInputForm.value[0]) {
+    alert("First letter needs to be capital");
+    return;
+  }
+
   const li = document.createElement("li");
   li.textContent = taskInputForm.value;
 
