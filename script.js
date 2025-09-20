@@ -7,6 +7,19 @@ form.addEventListener("submit", (event) => {
 
   const li = document.createElement("li");
   li.textContent = taskInputForm.value;
+
+  li.addEventListener("click", () => {
+    li.classList.toggle("done");
+  });
+
+  const deleteTaskButton = document.createElement("button");
+  deleteTaskButton.textContent = "X";
+  deleteTaskButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    li.remove();
+  });
+
+  li.appendChild(deleteTaskButton);
   taskListForm.appendChild(li);
 
   taskInputForm.value = "";
