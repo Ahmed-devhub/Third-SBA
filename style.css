@@ -1,0 +1,10 @@
+body {
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  color: darkblue;
+}
