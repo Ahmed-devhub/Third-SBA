@@ -31,6 +31,19 @@ form.addEventListener("submit", (event) => {
 
   li.appendChild(deleteTaskButton);
   taskListForm.appendChild(li);
-
   taskInputForm.value = "";
+  setTimeout(() => {
+    alert("New Task Added Successfully");
+  }, 500);
 });
+
+const footer = document.querySelector("footer");
+const screenInfo = document.createElement("p");
+footer.append(screenInfo);
+
+function updateScreenSize() {
+  screenInfo.textContent = `Screen size: ${innerWidth} x ${innerHeight}`;
+}
+
+updateScreenSize();
+window.addEventListener("resize", updateScreenSize);
