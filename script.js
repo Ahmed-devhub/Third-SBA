@@ -31,10 +31,17 @@ form.addEventListener("submit", (event) => {
 
   li.appendChild(deleteTaskButton);
   taskListForm.appendChild(li);
+  const clonedTask = li.cloneNode(true);
+  clonedTask.textContent = "Cloned: " + taskInputForm.value;
+  taskListForm.appendChild(clonedTask);
   taskInputForm.value = "";
   setTimeout(() => {
     alert("New Task Added Successfully");
   }, 500);
+  const taskList = document.querySelectorAll("li");
+  for (let task of taskList) {
+    console.log(task.textContent);
+  }
 });
 
 const footer = document.querySelector("footer");
